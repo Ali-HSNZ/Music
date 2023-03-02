@@ -5,7 +5,6 @@
       "@/components/*": ["./src/components/*"],
       "@/images/*": ["./src/images/*"],
       "@/layout/*": ["./src/layout/*"],
-      "@/pages/*": ["./src/pages/*"],
       "@/redux/*": ["./src/redux/*"],
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
