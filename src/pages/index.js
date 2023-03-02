@@ -16,10 +16,10 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
+          <p className='text-gray-800 font-quicksand-light'>Get started by editing;</p>
+          <p className='text-gray-800 font-quicksand-bold'>Get started by editing;</p>
+          <p className='text-gray-800 font-quicksand-medium'>Get started by editing;</p>
+          <p className='text-gray-800 font-quicksand-regular'>Get started by editing;</p>
           <div>
             <a
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
