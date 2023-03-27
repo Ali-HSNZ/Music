@@ -2,6 +2,14 @@ import Head from 'next/head'
 import NewMusics from '@components/NewMusic'
 import Layout from '@layout/Layout'
 import TopChart_and_promoteArtist from '@components/TopChart_and_promoteArtist'
+import PopularPodcasts from '@components/PopularPodcasts'
+import TopWeekMusics from '@components/TopWeekMusics'
+
+// Icons
+import { BsCollectionPlayFill } from 'react-icons/bs';
+import { MdRadio } from 'react-icons/md';
+import { RiUser3Fill } from 'react-icons/ri';
+import { IoLogOut } from 'react-icons/io5';
 
 export default function Home() {
   return (
@@ -13,8 +21,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <TopChart_and_promoteArtist/>
-        <NewMusics/>
+
+          <TopChart_and_promoteArtist/>
+          <NewMusics/>
+        <PopularPodcasts/>
+        <TopWeekMusics/>
       </Layout>      
     </>
   )
