@@ -1,28 +1,56 @@
+//! ====Swiper====>
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { FreeMode , Navigation} from "swiper";
+import "swiper/css/free-mode";
+//! <====Swiper====
+
 const TopWeekMusics = () => {
      return (  
           <section className='w-full overflow-hidden mt-8'>
                     <h3 className='text-mainColor text-2xl font-quicksand-bold'>Top Week Musics.</h3>
 
                     <section className="w-full">
-                         <div className="w-full mt-4 grid grid-cols-7">
-                              <span className="font-quicksand-medium">Su</span>
-                              <span className="font-quicksand-medium">Mo</span>
-                              <span className="font-quicksand-medium">Tu</span>
-                              <span className="font-quicksand-medium">We</span>
-                              <span className="font-quicksand-medium">Th</span>
-                              <span className="font-quicksand-medium">Fr</span>
-                              <span className="font-quicksand-medium">Sa</span>
-                         </div>
-                         <hr className="border-second mt-2"/>
-                         <div className="w-full mt-4 grid grid-cols-7 gap-4">
-                              {["Su","Mo","Tu","We","Th","Fr","Sa"].map((item)=> (
-                                   <article className={`w-full flex flex-col items-center border border-secondBg rounded-md p-2`}>
-                                        {/* <img className="w-auto rounded-lg" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"/> */}
-                                        <p className="font-quicksand-regular">{item} - ye rooze khoob miad!</p>
-                                   </article>
+                         <Swiper 
+                              className={"slider_freeMode w-full mt-6 overflow-hidden"} 
+                              freeMode={true} 
+                              navigation={true} 
+                              spaceBetween={0} 
+                              modules={[ Navigation , FreeMode]}
+                              slidesPerView={'auto'}
+                         >
+                              {["Su","Mo","Tu","We","Th","Fr","Sa"].map((item,index)=> (
+                                   <SwiperSlide>
+                                        <span className="font-quicksand-medium">{item}</span>
+                                        <hr className="border-second mt-2"/>
+                                        <div className="px-2 mt-4">
+                                             <article className={`gap-x-4 full w-[200px] flex flex-col  border border-secondBg rounded-md p-2`}>
+                                                  <div className="w-full flex items-center">
+                                                       <img className="w-full h-[80px] object-cover rounded-lg" 
+                                                            src={index === 0 ? "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg" :
+                                                                 index === 1 ? "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg" :
+                                                                 index === 2 ? "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg" :
+                                                                 index === 3 ? "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg" :
+                                                                 index === 4 ? "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg" :
+                                                                 index === 5 ? "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg" :
+                                                                 index === 6 ? "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg" :
+                                                                 "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg" 
+                                                       }
+                                                            />
+                                                  </div>
+                                                       <button className='mt-2 p-2 w-full relative pl-11 flex items-center justify-start border group border-secondBg duration-150 hover:border-second h-auto rounded-md '>
+                                                            <svg className="absolute text-second left-3 w-6 h-6 "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                                                            </svg>
+                                                            <p className="truncate font-quicksand-regular">{item} - gharare biad miad!</p>
+                                                       </button>
+                                             </article>
+                                        </div>
+                              </SwiperSlide>
                               ))}
-                         </div>
-
+                         </Swiper>
                     </section>
                
 

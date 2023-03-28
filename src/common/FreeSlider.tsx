@@ -7,10 +7,10 @@ import { FreeMode , Navigation} from "swiper";
 import "swiper/css/free-mode";
 //! <====Swiper====
 import Link from 'next/link';
-import { ISliderProps } from "@type/public.types";
-
+import { ETypes, ISliderProps } from "@type/public.types";
+import {BsCollectionPlay} from 'react-icons/bs'
 type TTitle = string
-const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title}) => {
+const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title , type}) => {
       
      return (
           <section className='mt-6'>
@@ -19,7 +19,7 @@ const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title}) =
                     <span className="cursor-pointer text-secondColor underline">See More</span>
                </div>
                <Swiper 
-                    className={"slider  mt-6 overflow-hidden"} 
+                    className={"slider_freeMode  mt-6"} 
                     freeMode={true} 
                     navigation={true} 
                     spaceBetween={16} 
@@ -30,16 +30,21 @@ const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title}) =
                   <SwiperSlide key={index}>
                     <div className="relative max-w-[200px] min-w-[200px]">
                          <Link href={"#"} className='w-full relative'>
-                              <svg className="w-6 h-6 absolute top-3 right-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
-                              </svg>
                               <img className='w-full h-[180px] rounded-md  object-cover' src={item.img}/>
                          </Link>
-                         <button className='mt-2 p-2 relative pl-9 flex items-center justify-start border group border-secondBg duration-150 hover:border-yellow h-auto rounded-md border-secondColor'>
-                              <svg className="absolute left-3 w-6 h-6 group-hover:text-yellow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                              </svg>
-                              <p className='w-[148px] truncate ml-2 text-secondColor text-left font-quicksand-medium'>{item.title}</p>
+                         <button className='mt-2 p-2 relative pl-9 flex items-center justify-start border group border-secondBg duration-150 hover:border-second h-auto rounded-md border-secondColor'>
+                              {type === ETypes.SINGER ? (
+                                   <svg className="absolute text-second left-3 w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                   </svg>
+                              ) : type === ETypes.SONG || type === ETypes.POTCAST ? (
+                                   <svg className="absolute text-second left-3 w-6 h-6 "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                                   </svg>
+                              ) : type === ETypes.PLAYLIST ? (
+                                   <BsCollectionPlay className="absolute text-second left-3 w-6 h-6 "/>
+                              ) : <></>}
+                              <p className='w-[148px] truncate ml-2 text-secondColor text-left font-quicksand-medium'>Reza Pishro</p>
                          </button>
                     </div>
                   </SwiperSlide>

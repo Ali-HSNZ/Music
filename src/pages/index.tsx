@@ -1,19 +1,16 @@
 import Head from 'next/head'
-import NewMusics from '@components/NewMusic'
 import Layout from '@layout/Layout'
 import MainSlider from '@components/MainSlider'
-import PopularPodcasts from '@components/PopularPodcasts'
 import TopWeekMusics from '@components/TopWeekMusics'
-import Top3 from '@components/Top3'
 import FreeSlider from '@common/FreeSlider'
-import { TSlider } from '@type/public.types'
+import { ETypes, TSlider } from '@type/public.types'
 
 export default function Home() {
 
   const data : TSlider[]= [
     {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg"},
-    {title : "Z3ta" , img : "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg"},
-    {title : "oone mesle Dadasham bood" , img : "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"},
+    {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg"},
+    {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"},
     {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg"},
     {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg"},
     {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg"},
@@ -30,11 +27,19 @@ export default function Home() {
       </Head>
       <Layout>
         <MainSlider/>
-        <FreeSlider sliders={data} title={"New Musics"}/>
-        {/* <Top3/> */}
         <TopWeekMusics/>
-        <NewMusics/>
-        <PopularPodcasts/>
+        {/* New Musics */}
+        <FreeSlider type={ETypes.SONG} sliders={data} title={"New Tracks."}/>
+        {/* New Album */}
+        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
+        {/* Recently Added */}
+        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Recently Added."}/>
+        {/* New Podcasts */}
+        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"New Podcasts."}/>
+        {/* Popular Playlist */}
+        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"Popular Playlists."}/>
+        {/* Top Artists */}
+        <FreeSlider type={ETypes.SINGER} sliders={data} title={"Top Artists."}/>
       </Layout>      
     </>
   )
