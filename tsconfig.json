@@ -22,7 +22,7 @@
       "@images/*": ["./src/images/*"],
       "@layout/*": ["./src/layout/*"],
       "@services/*": ["./src/services/*"],
-      "@types/*": ["./src/types/*"],
+      "@type/*": ["./src/types/*"],
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
     }
