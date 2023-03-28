@@ -9,9 +9,8 @@ import "swiper/css/free-mode";
 import Link from 'next/link';
 import { ETypes, ISliderProps } from "@type/public.types";
 import {BsCollectionPlay} from 'react-icons/bs'
-type TTitle = string
+
 const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title , type}) => {
-      
      return (
           <section className='mt-6'>
                <div className="flex justify-between items-center">
