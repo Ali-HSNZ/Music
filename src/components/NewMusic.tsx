@@ -23,20 +23,23 @@ const NewMusics = () => {
                     modules={[ Navigation , FreeMode]}
                     slidesPerView={'auto'}
                >
-                {[1,2,3,4,5,6,7,8,9,10,11,12].map(item => (
-                  <SwiperSlide>
-                    <section  className="bg-white rounded-md w-full h-full min-w-[200px] p-4 flex flex-col sm:items-center">
-                         <div className="flex flex-row sm:flex-col sm:items-center">
-                              <section className="w-40 lg:w-36 flex justify-center pt-4 relative  ">
-                                   <img src=""  alt={`تصویر `} className="w-full h-auto font-sans text-sm"/>
-                              </section>
-                              {/* Product Title */}
-                              <p className="font-sans text-xs text-right w-full sm:mt-4 text-gray-700  leading-7">producttitle</p>
-                         </div>
-                         <div className="h-full flex  flex-row justify-between items-end w-full mt-4  sm:gap-y-2">
-                              <h6 className="font-sans whitespace-nowrap text-xs text-gray-500">در 5 فروشگاه</h6>
-                         </div>
-                    </section>
+                {[
+                         "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                         "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg"].map(item => (
+                  <SwiperSlide key={item}>
+                    <Link href={"#"} className='w-auto relative'>
+                         <svg className="w-6 h-6 absolute top-3 right-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                         </svg>
+                         <img className='w-[180px] rounded-md h-[180px] object-cover' src={item}/>
+                         <p className='mt-2 text-secondColor font-quicksand-medium'>Podcast Title</p>
+                    </Link>
                   </SwiperSlide>
                 ))}
              </Swiper>
