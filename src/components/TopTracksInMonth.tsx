@@ -5,7 +5,7 @@ const TopTracksInMonth = () => {
                     <h3 className='text-mainColor text-2xl font-quicksand-bold'>Top Tracks In Month.</h3>
                     <span className="cursor-pointer text-secondColor underline">See More</span>
                </div>
-               <section className="w-full mt-6 h-auto grid grid-cols-3 gap-4">
+               <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
                     {["https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
                       "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
                       "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
