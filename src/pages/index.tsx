@@ -33,8 +33,8 @@ export default function Home() {
         <FreeSlider type={ETypes.SONG} sliders={data} title={"New Release."}/>
         {/* New Album */}
         <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
-        {/* popular Padcasts */}
-        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"popular Padcats."}/>
+        {/* popular Podcasts */}
+        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"popular Podcasts."}/>
         {/* Top Tracks In Month */}
         <TopTracksInMonth/>
         {/* Recently Added */}
