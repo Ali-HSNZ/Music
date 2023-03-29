@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Layout from '@layout/Layout'
 import MainSlider from '@components/MainSlider'
-import TopWeekMusics from '@components/TopWeekMusics'
+import TopTracksInWeek from '@components/TopTracksInWeek'
 import FreeSlider from '@common/FreeSlider'
 import { ETypes, TSlider } from '@type/public.types'
+import TopTracksInMonth from '@components/TopTracksInMonth'
 
 export default function Home() {
 
@@ -27,15 +28,18 @@ export default function Home() {
       </Head>
       <Layout>
         <MainSlider/>
-        <TopWeekMusics/>
-        {/* New Musics */}
-        <FreeSlider type={ETypes.SONG} sliders={data} title={"New Tracks."}/>
+        <TopTracksInWeek/>
+        {/* New Release */}
+        <FreeSlider type={ETypes.SONG} sliders={data} title={"New Release."}/>
         {/* New Album */}
         <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
+        <TopTracksInMonth/>
         {/* Recently Added */}
         <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Recently Added."}/>
         {/* New Podcasts */}
         <FreeSlider type={ETypes.POTCAST} sliders={data} title={"New Podcasts."}/>
+        {/* Top Podcasts */}
+        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Top Podcasts."}/>
         {/* Popular Playlist */}
         <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"Popular Playlists."}/>
         {/* Top Artists */}
