@@ -8,11 +8,15 @@ module.exports = {
       colors : {
         mainBg : "#1E1E1E",
         secondBg : "#33373B",
-        secondBlackBg : "#141414",
+
         mainBlackBg : "#101010",
+        secondBlackBg : "#141414",
+        
         yellow : "#FACD66",
+        
         main : "#EFEEE0",
         second : "#ffffff80",
+        
         transparent : "transparent"
       },
       fontFamily : {

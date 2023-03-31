@@ -6,7 +6,7 @@ import Player from "./Player";
 
 const Layout = (props : any) : JSX.Element => {
      return (  
-          <main className='w-full flex flex-col items-center justify-center pb-28'>
+          <main className='w-full flex flex-col items-center justify-center pb-24'>
                <Header/>
 
                <main className='h-auto w-full grid grid-cols-9 gap-x-6 max-w-[1600px]'>
