@@ -4,7 +4,7 @@ import Slider from '@mui/material/Slider';
 import {FaPlay , FaPause} from 'react-icons/fa'
 import {GiNextButton , GiPreviousButton} from 'react-icons/gi'
 import {TiArrowShuffle} from 'react-icons/ti'
-import {RiRepeatOneLine} from 'react-icons/ri'
+import {RiRepeatOneLine , RiVolumeMuteLine} from 'react-icons/ri'
 
 import React , {useRef , useState} from 'react'
 
@@ -16,19 +16,20 @@ const Player = () => {
      const audioRef = useRef<any>()
      const [isPlaying , setIsPlaying] = useState<boolean>(false) 
      const [isShuffle , setIsShuffle] = useState<boolean>(false) 
+     const [isMuted , setIsMuted] = useState<boolean>(false) 
      const [isRepeatOne , setIsRepeatOne] = useState<boolean>(false) 
 
      const [volume, setVolume] = useState<any>(100); // initial volume value is 100
+     const [cloneVolume, setCloneVolume] = useState<any>(volume); // initial volume value is 100
 
      const changeVolumeHandler = (event : any) => {
           const inputValue : number = event.target.value;
           setVolume(inputValue);
+          setIsMuted(false)
+          inputValue !== 0 && setCloneVolume(inputValue)
           audioRef.current.volume = inputValue/100;
      }
-
-     console.log("volume : ",volume);
      
-
      const [songInfo , setSongInfo] = useState<any>({
           currentTime : null,
           duration : null
@@ -47,7 +48,7 @@ const Player = () => {
 
      const timeUpdateHandler = (e : any) => {
           const currentTime = e.target.currentTime;
-          const duration = e.target.duration; // End Time of Music
+          const duration = e.target.duration; // End Time of Audio
           if(currentTime === duration && isPlaying && isRepeatOne){
                setIsPlaying(true)
                setSongInfo({...songInfo , currentTime : 0 })
@@ -55,7 +56,7 @@ const Player = () => {
 
           }else if(currentTime === duration && !isRepeatOne){
                setIsPlaying(false)
-               setSongInfo({...songInfo , currentTime : 0 })
+               setSongInfo({...songInfo , currentTime })
                audioRef.current.pause()
           }
           else{
@@ -71,6 +72,18 @@ const Player = () => {
           audioRef.current.currentTime = currentTime
           setSongInfo({...songInfo , currentTime })
      }
+     const mutedAudio = () => {
+          if(isMuted){
+               setVolume(cloneVolume)
+               audioRef.current.volume = cloneVolume / 100
+               setIsMuted(false)
+          }else{
+               setVolume(0)
+               audioRef.current.volume = 0
+               setIsMuted(true)
+          }
+     }
+     
      
      return (  
           <section className="fixed border-2 border-secondBg bottom-0 left-0 right-0 bg-secondBlackBg z-50 flex">
@@ -146,13 +159,20 @@ const Player = () => {
                     </div>
                </div>
 
-               <div className="flex items-center px-4 gap-x-4">
-                    <button className="text-second">
-                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
-                         </svg>
+               {/* Volume */}
+               <div className="flex items-center px-4 gap-x-2 ">
+                    <button onClick={mutedAudio} className="text-second p-1 z-20 relative">
+                         {isMuted ? (
+                              <svg className="z-10 w-6 h-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6l4.72-4.72a.75.75 0 011.28.531V19.94a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.506-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.395C2.806 8.757 3.63 8.25 4.51 8.25H6.75z" />
+                              </svg>
+                         ) : (
+                              <svg  className="z-10 w-6 h-6 text-second" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" />
+                              </svg>
+                         )}
                     </button>
-                    <div className="w-[100px]">
+                    <div className="w-[100px] h-fit">
                          <Slider
                               aria-label="Volume1"
                               defaultValue={0}
