@@ -15,13 +15,23 @@ const Player = () => {
      
      const audioRef = useRef<any>()
      const [isPlaying , setIsPlaying] = useState<boolean>(false) 
+     const [volume, setVolume] = useState<any>(100); // initial volume value is 100
+
+     const changeVolumeHandler = (event : any) => {
+          const inputValue : number = event.target.value;
+          setVolume(inputValue);
+          audioRef.current.volume = inputValue/100;
+     }
+
+     console.log("volume : ",volume);
+     
 
      const [songInfo , setSongInfo] = useState<any>({
           currentTime : null,
           duration : null
      })
 
-
+     
      const playSong = () => {
           if(isPlaying){
                audioRef.current.pause();
@@ -34,8 +44,13 @@ const Player = () => {
 
      const timeUpdateHandler = (e : any) => {
           const currentTime = e.target.currentTime;
-          const duration = e.target.duration;
-          setSongInfo({...songInfo , currentTime , duration})
+          const duration = e.target.duration; // End Time of Music
+          if(currentTime === duration){
+               setIsPlaying(false)
+               setSongInfo({...songInfo , currentTime : 0 })
+          }else{
+               setSongInfo({...songInfo , currentTime , duration})
+          }
      }
      const timeFormat = (time : number | any ) =>  {
           const Minuts = Math.floor(time / 60) < 10 ? "0"+Math.floor(time / 60) : Math.floor(time / 60)
@@ -49,7 +64,7 @@ const Player = () => {
      
      return (  
           <section className="fixed border-2 border-secondBg bottom-0 left-0 right-0 bg-secondBlackBg z-50 flex">
-               <audio 
+               <audio
                     onLoadedMetadata={timeUpdateHandler}
                     onTimeUpdate={timeUpdateHandler}
                     ref={audioRef}
@@ -73,15 +88,15 @@ const Player = () => {
                          {/* Shuffle */}
                          <button><TiArrowShuffle size={25}/></button>
                          {/* Previous */}
-                         <button className="border border-secondBg hover:border-second p-3 rounded-full">
+                         <button className="border-2 border-secondBg hover:border-second p-3 rounded-full">
                               <GiPreviousButton size={16}/>
                          </button>
                          {/* Play */}
-                         <button onClick={playSong} className="border border-secondBg hover:border-second p-3 rounded-full">
+                         <button onClick={playSong} className={`border-2 ${isPlaying ? "border-second" : "border-secondBg"} hover:border-second p-3 rounded-full`}>
                               {!isPlaying ? <FaPlay size={16}/> : <FaPause size={16}/>}
                          </button>
                          {/* Next */}
-                         <button className="border border-secondBg hover:border-second p-3 rounded-full">
+                         <button className="border-2 border-secondBg hover:border-second p-3 rounded-full">
                               <GiNextButton size={16}/>
                          </button>
                          {/* RepeatOne */}
@@ -125,8 +140,12 @@ const Player = () => {
                     </button>
                     <div className="w-[100px]">
                          <Slider
-                              aria-label="Volume"
+                              aria-label="Volume1"
                               defaultValue={0}
+                              min={0}
+                              max={100}
+                              value={volume}
+                              onChange={changeVolumeHandler}
                               sx={{
                                    color: theme.palette.mode === 'dark' ? '#fff' : '#FACD66',
                                    '& .MuiSlider-track': {border: 'none',},
