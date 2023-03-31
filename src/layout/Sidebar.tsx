@@ -6,7 +6,7 @@ import { IoLogOut } from 'react-icons/io5';
 
 const Sidebar = () => {
      return (  
-          <aside className='col-span-2 sticky h-screen top-[81px] left-6 w-full'>
+          <aside className='col-span-2 sticky h-screen top-6 left-6 w-full'>
                <div className="rounded-md overflow-hidden border border-secondBg">
                     <div className='p-4 flex gap-x-2 items-center bg-secondBlackBg hover:bg-mainBlackBg'>
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow cursor-pointer" viewBox="0 0 20 20" fill="currentColor">

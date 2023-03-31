@@ -6,10 +6,10 @@ import Player from "./Player";
 
 const Layout = (props : any) : JSX.Element => {
      return (  
-          <main className='w-full flex flex-col items-center justify-center'>
+          <main className='w-full flex flex-col items-center justify-center pb-28'>
                <Header/>
 
-               <main className='mt-[81px] h-auto w-full grid grid-cols-9 gap-x-6 max-w-[1600px]'>
+               <main className='h-auto w-full grid grid-cols-9 gap-x-6 max-w-[1600px]'>
                     <Sidebar/>
 
                     {/* Main Content */}

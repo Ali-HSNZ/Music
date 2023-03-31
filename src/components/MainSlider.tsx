@@ -12,7 +12,7 @@ const MainSlider = () => {
           <section className='w-full  gap-x-6 '>
                {/* Promote Artist */}
                <Swiper 
-                    className={"mt-6 overflow-hidden"} 
+                    className={"overflow-hidden"} 
                     freeMode={false} 
                     navigation={true} 
                     spaceBetween={16} 

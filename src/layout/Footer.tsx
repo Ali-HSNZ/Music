@@ -77,7 +77,7 @@ const Footer = () => {
                     <p className="font-quicksand-bold text-yellow">Musica</p>
                     <p className="font-quicksand-light text-second ml-8">
                          You can use all the services of the site, such as listening to music and podcasts, as well as creating your favorite music playlist for free.
-                         Also, downloading music and podcasts and liking and bookmarking them are among the features of this site
+                         Also, downloading music and podcasts and liking and bookmarking them are among the features of this site.
                     </p>
                </div>
           </footer>
