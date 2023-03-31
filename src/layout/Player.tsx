@@ -48,7 +48,7 @@ const Player = () => {
      const timeUpdateHandler = (e : any) => {
           const currentTime = e.target.currentTime;
           const duration = e.target.duration; // End Time of Music
-          if(currentTime === duration && isRepeatOne){
+          if(currentTime === duration && isPlaying && isRepeatOne){
                setIsPlaying(true)
                setSongInfo({...songInfo , currentTime : 0 })
                audioRef.current.play()
