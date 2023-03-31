@@ -15,6 +15,9 @@ const Player = () => {
      
      const audioRef = useRef<any>()
      const [isPlaying , setIsPlaying] = useState<boolean>(false) 
+     const [isShuffle , setIsShuffle] = useState<boolean>(false) 
+     const [isRepeatOne , setIsRepeatOne] = useState<boolean>(false) 
+
      const [volume, setVolume] = useState<any>(100); // initial volume value is 100
 
      const changeVolumeHandler = (event : any) => {
@@ -45,10 +48,17 @@ const Player = () => {
      const timeUpdateHandler = (e : any) => {
           const currentTime = e.target.currentTime;
           const duration = e.target.duration; // End Time of Music
-          if(currentTime === duration){
+          if(currentTime === duration && isRepeatOne){
+               setIsPlaying(true)
+               setSongInfo({...songInfo , currentTime : 0 })
+               audioRef.current.play()
+
+          }else if(currentTime === duration && !isRepeatOne){
                setIsPlaying(false)
                setSongInfo({...songInfo , currentTime : 0 })
-          }else{
+               audioRef.current.pause()
+          }
+          else{
                setSongInfo({...songInfo , currentTime , duration})
           }
      }
@@ -86,21 +96,25 @@ const Player = () => {
                <div className="w-full flex flex-col justify-between mt-4">
                     <div className="w-full flex gap-x-8 items-center text-second justify-center">
                          {/* Shuffle */}
-                         <button><TiArrowShuffle size={25}/></button>
+                         <button onClick={() => setIsShuffle(!isShuffle)}>
+                              <TiArrowShuffle color={isShuffle ? '#FACD66' : "#ffffff80"} size={25}/>
+                         </button>
                          {/* Previous */}
                          <button className="border-2 border-secondBg hover:border-second p-3 rounded-full">
                               <GiPreviousButton size={16}/>
                          </button>
                          {/* Play */}
                          <button onClick={playSong} className={`border-2 ${isPlaying ? "border-second" : "border-secondBg"} hover:border-second p-3 rounded-full`}>
-                              {!isPlaying ? <FaPlay size={16}/> : <FaPause size={16}/>}
+                              {isPlaying ? <FaPause size={16}/> : <FaPlay size={16}/>}
                          </button>
                          {/* Next */}
                          <button className="border-2 border-secondBg hover:border-second p-3 rounded-full">
-                              <GiNextButton size={16}/>
+                              <GiNextButton  size={16}/>
                          </button>
                          {/* RepeatOne */}
-                         <button><RiRepeatOneLine size={25}/></button>
+                         <button onClick={() => setIsRepeatOne(!isRepeatOne)}>
+                              <RiRepeatOneLine color={isRepeatOne ? '#FACD66' : "#ffffff80"} size={25}/>
+                         </button>
                     </div>
                     <div className="px-6 mt-2 flex justify-between gap-x-4 mb-2">
                          <span className='font-quicksand-medium text-second'>{timeFormat(songInfo.currentTime)}</span>
