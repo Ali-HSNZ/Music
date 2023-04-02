@@ -13,3 +13,8 @@ export interface ISliderProps {
      title : string
      type : ETypes
 }
+export type TMiniSongItemProps = {
+     title : string
+     singer : string
+     imgSrc : string
+}
