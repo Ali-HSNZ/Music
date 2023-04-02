@@ -10,11 +10,11 @@ import "swiper/css/free-mode";
 const TopWeekMusics = () => {
      return (  
           <section className='w-full overflow-hidden mt-8'>
-                    <h3 className='text-mainColor text-2xl font-quicksand-bold'>Top Tracks In Week.</h3>
+                    <h3 className='text-mainColor text-2xl font-quicksand-bold text-main'>Top Tracks In Week.</h3>
 
                     <section className="w-full">
                          <Swiper 
-                              className={"slider_freeMode w-full mt-6 overflow-hidden"} 
+                              className={"slider_freeMode w-full mt-4 overflow-hidden"} 
                               freeMode={true} 
                               navigation={true} 
                               spaceBetween={0} 
@@ -23,7 +23,7 @@ const TopWeekMusics = () => {
                          >
                               {["Su","Mo","Tu","We","Th","Fr","Sa"].map((item,index)=> (
                                    <SwiperSlide>
-                                        <span className="font-quicksand-medium">{item}</span>
+                                        <span className="font-quicksand-medium text-second">{item}</span>
                                         <hr className="border-second mt-2"/>
                                         <div className="px-2 mt-4">
                                              <article className={`gap-x-4 full w-[200px] flex flex-col  border border-secondBg rounded-md p-2`}>
@@ -44,13 +44,13 @@ const TopWeekMusics = () => {
                                                        <svg className="absolute text-second left-0 w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                                        </svg>
-                                                       <p className='w-full underline underline-offset-2 hover:no-underline cursor-pointer truncate ml-2 text-secondColor text-left font-quicksand-medium'>Reza Pishro</p>
+                                                       <p className='w-full underline underline-offset-2 hover:no-underline cursor-pointer truncate ml-2 text-secondColor text-left font-quicksand-medium text-second'>Reza Pishro</p>
                                                   </div>
                                                        <button className=' p-2 w-full relative pl-11 flex items-center justify-start border group border-secondBg duration-150 hover:border-second h-auto rounded-md '>
                                                             <svg className="absolute text-second left-3 w-6 h-6 "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
                                                                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
                                                             </svg>
-                                                            <p className="truncate font-quicksand-regular">{item} - gharare biad miad!</p>
+                                                            <p className="truncate font-quicksand-regular text-main">Qabil</p>
                                                        </button>
                                              </article>
                                         </div>
