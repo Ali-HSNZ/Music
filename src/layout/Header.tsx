@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Header = () => {
      return (  
-          <header className='px-6 py-4 w-full  z-50 bg-mainBg top-0 flex items-center max-w-[1600px]'>
-               <nav className='p-2 bg-secondBg rounded-full'>
+          <header className='px-6 py-4 w-full  z-50 bg-transparent top-0 flex items-center max-w-[1600px]'>
+               <nav className='py-2'>
                     <Link className="w-2" href={"/"}>
                          <img src={logo.src} className=""/>
                     </Link>
