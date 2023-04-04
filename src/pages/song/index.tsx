@@ -24,7 +24,7 @@ import { TCollection } from "@type/song.types";
 type TCollectionModalType = "CREATE" | "SELECT"
 
 const SongPage = () => {
-     const [isShowAddToCollection , setIsShowAddToCollection] = useState<boolean>(true)
+     const [isShowAddToCollection , setIsShowAddToCollection] = useState<boolean>(false)
      const [collectionInfo , setColectionInfo] = useState<TCollection>({
           collections : [],
           songId : 1
