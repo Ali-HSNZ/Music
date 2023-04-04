@@ -22,7 +22,7 @@ const ModalCommon : React.FunctionComponent<TModalCommonProps> = ({title , child
   }
   return (  
     <Modal open={open} onClose={()=> setOpen(false)} className={`outline-none z-20 focus:outline-none flex items-center justify-center px-6`}>
-      <section className={`flex flex-col place-content-between bg-secondBg border-2 border-second outline-none p-4 rounded-md w-full md:w-1/2 xl:w-1/3 h-1/2`}>
+      <section className={`flex flex-col place-content-between bg-secondBg border-2 border-second outline-none p-4 rounded-md w-full md:w-1/2 xl:w-1/3 h-[400px]`}>
         <div>
           <div className='w-full flex justify-between items-center'>
             <h5 className='text-xl text-main font-quicksand-bold'>{title}.</h5>
