@@ -1,4 +1,4 @@
 export type TCollection = {
-     collections : any
-     songId :any
+     collections : Array<number>
+     songId : number
 }

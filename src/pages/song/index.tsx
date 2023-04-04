@@ -7,21 +7,31 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FreeMode , Navigation} from "swiper";
 import "swiper/css/free-mode";
+//! <====Swiper====
+
+import {BiSelectMultiple} from 'react-icons/bi'
+
 import { ETypes, TSlider } from "@type/public.types";
 import FreeSlider from "@common/FreeSlider";
 import MiniSongItem from "@common/MiniSongItem";
 import ModalCommon from "@common/Modal";
 import { useState } from "react";
 import { TCollection } from "@type/song.types";
-//! <====Swiper====
 
+
+
+// Literal - collection Modal Type
+type TCollectionModalType = "CREATE" | "SELECT"
 
 const SongPage = () => {
      const [isShowAddToCollection , setIsShowAddToCollection] = useState<boolean>(true)
      const [collectionInfo , setColectionInfo] = useState<TCollection>({
-          collections : [1],
-          songId : undefined
+          collections : [],
+          songId : 1
      })
+
+
+     const [collectionModalType , setCollectionModalType] = useState<TCollectionModalType>('SELECT') 
 
      const data : TSlider[]= [
           {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg"},
@@ -55,42 +65,71 @@ const SongPage = () => {
                     children={
                          <section className="w-full  flex flex-col justify-between h-full ">
                               <div>
-                                   <p className="text-second font-quicksand-medium">Select or Create Collection</p>
-                                   <div className="grid grid-cols-2 gap-4 pr-4 mt-4 w-full overflow-y-auto h-[180px] ">
-                                        {[
-                                             {id : 1 , title : "Asli" , count : 4},
-                                             {id : 2 , title : "Shad" , count : 13},
-                                             {id : 3 , title : "Ghamgin" , count : 5},
-                                             {id : 4 , title : "Harchi" , count : 14},
-                                             {id : 4234 , title : "Harchi" , count : 14},
-                                             {id : 3464 , title : "Harchi" , count : 14},
-                                             {id : 424 , title : "Harchi" , count : 14},
-                                             {id : 544 , title : "Harchi" , count : 14},
-                                             {id : 4234 , title : "Harchi" , count : 14},
-                                             {id : 6544 , title : "Harchi" , count : 14},
-                                             {id : 42345 , title : "Harchi" , count : 14},
-                                             {id : 12124 , title : "Harchi" , count : 14},
-                                             {id : 43325 , title : "Harchi" , count : 14},
-                                             {id : 1242644 , title : "Harchi" , count : 14},
-                                        ].map((song) => (
-                                             <div onClick={()=>collectionHandler(song.id)} key={song.id} className={`select-none cursor-pointer w-full border ${isCollection(song.id) ? "border-main" : "border-second hover:border-main"} rounded-md p-2 flex justify-between`}>
-                                                  <div>
-                                                       <h5 className="text-main font-quicksand-bold">{song.title}</h5>
-                                                       <h6 className="text-second font-quicksand-regular mt-1">{song.count} Tracks</h6>
-                                                  </div>
-                                                  {isCollection(song.id) ? (
-                                                       <svg className="w-6 h-6 text-main" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                                       </svg>
-                                                  ) : (
-                                                       <svg className="w-6 h-6 text-main" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
-                                                       </svg>
-                                                  )}
-
-                                             </div>
-                                        ))}
+                                   <div className="flex w-full justify-between items-center">
+                                        <p className="text-main font-quicksand-medium">Select or Create New Collection</p>
+                                        <div className="border border-second flex  rounded-md overflow-hidden">
+                                             <button onClick={() => setCollectionModalType("SELECT")} className={`${collectionModalType === 'SELECT' && "bg-mainBg hover:bg-secondBlackBg"} py-1.5 px-2 group`}>
+                                                  <BiSelectMultiple size={20} className="text-second group-hover:text-main duration-150"/>
+                                             </button>
+                                             <button onClick={() => setCollectionModalType("CREATE")} className={`${collectionModalType === 'CREATE' && "bg-mainBg hover:bg-secondBlackBg"} group py-1.5 px-2`}>
+                                                  <svg className="w-5 h-5 text-second group-hover:text-main duration-150" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                  </svg>
+                                             </button>
+                                        </div>
                                    </div>
+                                   {collectionModalType === "SELECT" ? (
+                                        <div className="grid grid-cols-2 gap-4 pr-4 mt-4 w-full overflow-y-auto h-[180px] ">
+                                             {[
+                                                  {id : 1 , title : "Asli" , count : 4},
+                                                  {id : 2 , title : "Shad" , count : 13},
+                                                  {id : 3 , title : "Ghamgin" , count : 5},
+                                                  {id : 4 , title : "Harchi" , count : 14},
+                                                  {id : 4234 , title : "Harchi" , count : 14},
+                                                  {id : 3464 , title : "Harchi" , count : 14},
+                                                  {id : 424 , title : "Harchi" , count : 14},
+                                                  {id : 544 , title : "Harchi" , count : 14},
+                                                  {id : 4234 , title : "Harchi" , count : 14},
+                                                  {id : 6544 , title : "Harchi" , count : 14},
+                                                  {id : 42345 , title : "Harchi" , count : 14},
+                                                  {id : 12124 , title : "Harchi" , count : 14},
+                                                  {id : 43325 , title : "Harchi" , count : 14},
+                                                  {id : 1242644 , title : "Harchi" , count : 14},
+                                             ].map((song) => (
+                                                  <div onClick={()=>collectionHandler(song.id)} key={song.id} className={`select-none cursor-pointer w-full border ${isCollection(song.id) ? "border-main" : "border-second hover:border-main"} rounded-md p-2 flex justify-between`}>
+                                                       <div>
+                                                            <h5 className="text-main font-quicksand-bold">{song.title}</h5>
+                                                            <h6 className="text-second font-quicksand-regular mt-1">{song.count} Tracks</h6>
+                                                       </div>
+                                                       {isCollection(song.id) ? (
+                                                            <svg className="w-6 h-6 text-main" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                                            </svg>
+                                                       ) : (
+                                                            <svg className="w-6 h-6 text-main" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+                                                            </svg>
+                                                       )}
+
+                                                  </div>
+                                             ))}
+                                        </div>
+                                   ) : (
+                                        <section className="flex flex-col w-full mt-4">
+                                             <div>
+                                                  <h6 className="font-quicksand-medium text-second">Collection Name :</h6>
+                                                  <input type={'text'} className={`w-full  rounded-sm py-1.5 px-4 mt-2 bg-second text-secondBlackBg placeholder:text-secondBlackBg font-quicksand-medium focus:outline-none`} />
+                                             </div>
+                                             <div className="mt-4">
+                                                  <p className="font-quicksand-regular text-[#8A8989]">
+                                                       After creating the collection, the song you want will be added to the collection.
+                                                  </p>
+                                                  <p className="font-quicksand-regular text-[#8A8989] mt-2">
+                                                       You can also add another song/playlist to this collection
+                                                  </p>
+                                             </div>
+                                        </section>
+                                   )}
                               </div>
                               <button className=" rounded-sm w-full p-2 text-mainBlackBg bg-second duration-150 hover:bg-main font-quicksand-bold">Submit</button>
                          </section>
