@@ -62,8 +62,8 @@ const SongPage = () => {
                     open={isShowAddToCollection} 
                     setOpen={setIsShowAddToCollection} 
                     title={'Add To Collections'}
-                    children={
-                         <section className="w-full  flex flex-col justify-between h-full ">
+               >
+                    <section className="w-full  flex flex-col justify-between h-full ">
                               <div>
                                    <div className="flex w-full justify-between items-center">
                                         <p className="text-main font-quicksand-medium">Select or Create New Collection</p>
@@ -133,8 +133,7 @@ const SongPage = () => {
                               </div>
                               <button className=" rounded-sm w-full p-2 text-mainBlackBg bg-second duration-150 hover:bg-main font-quicksand-bold">Submit</button>
                          </section>
-                    }
-               />
+               </ModalCommon>
                {/* Background Image */}
                <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/291b1db2a5_08cc6527491f2b8f8a849f1ebb581cf2.jpg')] bg-top `}></div>
                
@@ -240,7 +239,7 @@ const SongPage = () => {
                               }}  
                          >
                               {["Lyrics ","Arrangement ","Music ","Mix & Mastering"].map((item,index)=> (
-                                   <SwiperSlide>
+                                   <SwiperSlide key={index}>
                                         <span className="font-quicksand-medium text-main w-full">{item}</span>
                                         <hr className="border-second my-2"/>
                                         <p className="text-second truncate w-full px-4">Reza Pishro</p>
