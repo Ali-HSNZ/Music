@@ -22,7 +22,7 @@ const TopWeekMusics = () => {
                               slidesPerView={'auto'}
                          >
                               {["Su","Mo","Tu","We","Th","Fr","Sa"].map((item,index)=> (
-                                   <SwiperSlide>
+                                   <SwiperSlide key={index}>
                                         <span className="font-quicksand-medium text-second">{item}</span>
                                         <hr className="border-second mt-2"/>
                                         <div className="px-2 mt-4">
