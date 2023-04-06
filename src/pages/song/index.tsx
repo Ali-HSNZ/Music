@@ -17,6 +17,7 @@ import MiniSongItem from "@common/MiniSongItem";
 import ModalCommon from "@common/Modal";
 import { useState } from "react";
 import { TCollection } from "@type/song.types";
+import Link from "next/link";
 
 
 
@@ -137,23 +138,23 @@ const SongPage = () => {
                               </section>
                     </ModalCommon>
                     {/* Background Image */}
-                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/291b1db2a5_08cc6527491f2b8f8a849f1ebb581cf2.jpg')] bg-top `}></div>
+                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/3ff7f86580_6224df2a18d239ed5cd776b9dc30798b.jpg')] bg-top `}></div>
                     
                     {/* Content */}
                     <section className="z-10 relative">
-                         <div className="w-full flex flex-col items-center md:flex-row gap-x-6">
-                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/291b1db2a5_08cc6527491f2b8f8a849f1ebb581cf2.jpg"/>
+                         <div className="w-full flex flex-col items-end md:flex-row gap-x-6">
+                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/3ff7f86580_6224df2a18d239ed5cd776b9dc30798b.jpg"/>
                               <div className="w-full flex flex-col justify-end">
-                                   <p className="text-3xl mt-6 md:mt-0 font-quicksand-bold text-main">Delam Khast</p>
+                                   <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Injaneb</h1>
                                    {/* Artist */}
                                    <div className='mt-4 w-fit relative pl-6 flex items-center justify-start'>
                                         <svg className="absolute text-second left-0 w-6 h-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                                         </svg>
-                                        <p className='w-full text-second underline underline-offset-2 hover:no-underline cursor-pointer truncate ml-2 text-secondColor text-left font-quicksand-medium'>Reza Pishro</p>
+                                        <Link href={'/singer'} className='w-full text-second underline underline-offset-2 hover:no-underline cursor-pointer truncate ml-2 text-secondColor text-left font-quicksand-medium'>Shayea</Link>
                                    </div>
                                    {/* Song Count Detials*/}
-                                   <div className="rounded-md gap-4 flex flex-wrap w-full mt-6">
+                                   <div className="rounded-md gap-4 flex flex-wrap w-full mt-4">
                                         {/* Plays */}
                                         <div className="flex items-center gap-x-1 w-fit ">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-second">
@@ -177,37 +178,37 @@ const SongPage = () => {
                                         </div>
                                    </div>
                                    {/* Buttons - Play - download - like - ... */}
-                                   <div className="rounded-md gap-4 flex flex-wrap w-full mt-6">
+                                   <div className="rounded-md gap-4 flex flex-wrap w-full mt-4">
                                         {/* Play Now Button */}
-                                        <button className="duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
+                                        <button className="bg-secondBg bg-opacity-50 duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff80" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-main">
                                                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
                                              </svg>
                                              <span className="font-quicksand-bold text-sm text-second ">Play Now</span>
                                         </button>
                                         {/* Bookmark Button */}
-                                        <button className="duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
+                                        <button className="bg-secondBg bg-opacity-50 duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-second">
                                                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                              </svg>
                                              <span className="font-quicksand-bold text-sm text-second">Bookmark</span>
                                         </button>
                                         {/* Like Button */}
-                                        <button className="duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
+                                        <button className="bg-secondBg bg-opacity-50 duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-second">
                                                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                                              </svg>
                                              <span className="font-quicksand-bold text-sm text-second">Like</span>
                                         </button>
                                         {/* Download Button */}
-                                        <button className="duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
+                                        <button className="bg-secondBg bg-opacity-50 duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-second">
                                                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                              </svg>
                                              <span className="font-quicksand-bold text-sm text-second">Download</span>
                                         </button>
                                         {/* Add To Collection Button */}
-                                        <button onClick={()=> setIsShowAddToCollection(!isShowAddToCollection)} className="duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
+                                        <button onClick={()=> setIsShowAddToCollection(!isShowAddToCollection)} className="bg-secondBg bg-opacity-50 duration-150 flex items-center gap-x-1 w-fit border rounded-md py-1 px-2 border-second hover:border-main">
                                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-second">
                                                   <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                                              </svg>
@@ -218,9 +219,9 @@ const SongPage = () => {
                          </div>
                          {/* Details */}
                          <div className="w-full">
-                              <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>Details</h3>
+                              <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-4'>Details</h3>
                               <Swiper 
-                                   className={" w-full mt-6 overflow-hidden"} 
+                                   className={" w-full mt-4 overflow-hidden"} 
                                    freeMode={false} 
                                    navigation={false} 
                                    spaceBetween={0} 
