@@ -142,7 +142,7 @@ const SongPage = () => {
                     
                     {/* Content */}
                     <section className="z-10 relative">
-                         <div className="w-full flex flex-col items-end md:flex-row gap-x-6">
+                         <div className="w-full flex flex-col items-center md:items-end md:flex-row gap-x-6">
                               <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/3ff7f86580_6224df2a18d239ed5cd776b9dc30798b.jpg"/>
                               <div className="w-full flex flex-col justify-end">
                                    <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Injaneb</h1>

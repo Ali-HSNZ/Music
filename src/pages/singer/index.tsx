@@ -97,8 +97,8 @@ const SingerPage = () => {
                                         <div className="w-full flex  justify-between">
                                              <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md my-auto" src={item.img}/>                                                  
                                              <div className="w-full grid grid-cols-1 sm:grid-cols-2 pl-4">
-                                                  <Link href="/song" className="text-second  my-auto font-quicksand-medium  pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
-                                                  <span className={`text-second  ${index < 1 && "underline cursor-pointer" } pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : index < 2 ? 'solo Tracks' : "Tracks"}</span>
+                                                  <Link href="/song" className="text-second  my-auto font-quicksand-medium sm:w-fit pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
+                                                  <span className={`text-second  ${index < 1 && "underline cursor-pointer" } sm:w-fit pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : index < 2 ? 'solo Tracks' : "Tracks"}</span>
                                              </div>
                                              <span className="text-second  font-quicksand-medium flex items-center mr-4 text-left">04:12</span>
                                         </div>
