@@ -99,29 +99,21 @@ const SingerPage = () => {
                          <section className="w-full mt-4 h-auto flex flex-col gap-y-4 gap-4">
                          {data.slice(0,3).map((item,index) => (
                                    <article key={index} className="w-full select-none flex justify-between bg-secondBg bg-opacity-25 border border-secondBg  rounded-md  p-2">
-                                        <div className="w-full grid grid-cols-4">
-                                             <div className="flex w-full gap-x-6">
-                                                  <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md" src={item.img}/>
-                                                  <button className="p-1 group">
-                                                       <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                                       </svg>
-                                                  </button>
-                                                  <button className="p-1 group">
-                                                       <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                                       </svg>
-                                                  </button>
+                                        <div className="w-full flex  justify-between">
+                                             <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md my-auto" src={item.img}/>                                                  
+                                             <div className="w-full grid grid-cols-1 sm:grid-cols-2 pl-4">
+                                                  <Link href="/song" className="text-second  my-auto font-quicksand-medium  pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
+                                                  <span className={`text-second  ${index < 1 && "underline cursor-pointer" } pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : index < 2 ? 'solo Tracks' : "Tracks"}</span>
                                              </div>
-                                             <Link href="/song" className="text-second w-fit my-auto pr-6 font-quicksand-medium  cursor-pointer items-center  underline truncate">Qabil</Link>
-                                             <span className={`text-second w-fit ${index < 1 && "underline cursor-pointer" } my-auto pr-6 truncate font-quicksand-medium  items-center `}>{index < 1 ? "Shakhe ghermez" :'solo'}</span>
-                                             <span className="text-second w-fit font-quicksand-medium flex items-center ">04:12</span>
+                                             <span className="text-second  font-quicksand-medium flex items-center mr-4 text-left">04:12</span>
                                         </div>
-                                        <button>
-                                             <svg className="w-6 h-6 text-yellow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+
+                                        <button className="p-1 group hover:border-second border border-secondBg rounded-md py-1.5 h-fit my-auto px-4">
+                                             <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
                                              </svg>
                                         </button>
+
                                    </article>
                               ))
                          }
