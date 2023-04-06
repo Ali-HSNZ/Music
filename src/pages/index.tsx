@@ -27,26 +27,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <MainSlider/>
-        <TopTracksInWeek/>
-        {/* New Release */}
-        <FreeSlider type={ETypes.SONG} sliders={data} title={"New Release."}/>
-        {/* New Album */}
-        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
-        {/* popular Podcasts */}
-        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"popular Podcasts."}/>
-        {/* Top Tracks In Month */}
-        <TopTracksInMonth/>
-        {/* Recently Added */}
-        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Recently Added."}/>
-        {/* New Podcasts */}
-        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"New Podcasts."}/>
-        {/* Top Podcasts */}
-        <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Top Podcasts."}/>
-        {/* Popular Playlist */}
-        <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"Popular Playlists."}/>
-        {/* Top Artists */}
-        <FreeSlider type={ETypes.SINGER} sliders={data} title={"Top Artists."}/>
+        <>
+          <MainSlider/>
+          <TopTracksInWeek/>
+          {/* New Release */}
+          <FreeSlider type={ETypes.SONG} sliders={data} title={"New Release."}/>
+          {/* New Album */}
+          <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
+          {/* popular Podcasts */}
+          <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"popular Podcasts."}/>
+          {/* Top Tracks In Month */}
+          <TopTracksInMonth/>
+          {/* Recently Added */}
+          <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Recently Added."}/>
+          {/* New Podcasts */}
+          <FreeSlider type={ETypes.POTCAST} sliders={data} title={"New Podcasts."}/>
+          {/* Top Podcasts */}
+          <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Top Podcasts."}/>
+          {/* Popular Playlist */}
+          <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"Popular Playlists."}/>
+          {/* Top Artists */}
+          <FreeSlider type={ETypes.SINGER} sliders={data} title={"Top Artists."}/>
+        </>
       </Layout>      
     </>
   )
