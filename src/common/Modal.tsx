@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import React, { SetStateAction } from 'react';
 
@@ -11,18 +10,9 @@ type TModalCommonProps = {
 
 
 const ModalCommon : React.FunctionComponent<TModalCommonProps> = ({title , children , setOpen , open}) => {
-  if(open){
-    if(typeof document !== "undefined"){
-      document.body.classList.add('stop-scrolling')
-    }
-  }else{
-    if(typeof document !== "undefined"){
-      document.body.classList.remove('stop-scrolling')
-    }
-  }
   return (  
     <Modal open={open} onClose={()=> setOpen(false)} className={`outline-none z-20 focus:outline-none flex items-center justify-center px-6`}>
-      <section className={`flex flex-col place-content-between bg-secondBg border-2 border-second outline-none p-4 rounded-md w-full md:w-1/2 xl:w-1/3 h-[400px]`}>
+      <section className={`flex flex-col place-content-between bg-secondBg border-2 border-second outline-none p-4 rounded-md w-full sm:w-[500px] h-[400px]`}>
         <div>
           <div className='w-full flex justify-between items-center'>
             <h5 className='text-xl text-main font-quicksand-bold'>{title}.</h5>
@@ -39,5 +29,4 @@ const ModalCommon : React.FunctionComponent<TModalCommonProps> = ({title , child
     </Modal>
   );
 }
- 
 export default ModalCommon;
