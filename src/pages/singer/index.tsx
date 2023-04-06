@@ -1,8 +1,5 @@
 import Layout from "@layout/Layout";
-
-
-import { ETypes, TSlider } from "@type/public.types";
-import FreeSlider from "@common/FreeSlider";
+import { TSlider } from "@type/public.types";
 import MiniSongItem from "@common/MiniSongItem";
 import {BsFillShareFill} from 'react-icons/bs'
 import Link from "next/link";
@@ -23,8 +20,6 @@ const SingerPage = () => {
           {title : "Aleki" , img : "https://cdnmrtehran.ir/media/imgtmp/6415f59163d4d.jpg"},
      ]
 
-
-
      return (  
           <Layout>
                <>
@@ -33,7 +28,7 @@ const SingerPage = () => {
                     
                     {/* Content */}
                     <section className="z-10 relative">
-                         <div className="w-full flex flex-col items-end md:flex-row gap-x-6">
+                         <div className="w-full flex flex-col items-center md:items-end md:flex-row gap-x-6">
                               <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/artists/63ee0761e2be4.jpg"/>
                               <div className="w-full flex flex-col justify-end">
                                    {/* Artist */}
