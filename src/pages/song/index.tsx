@@ -18,6 +18,7 @@ import ModalCommon from "@common/Modal";
 import { useState } from "react";
 import { TCollection } from "@type/song.types";
 import Link from "next/link";
+import SongItemCommon from "@common/SongItem";
 
 
 
@@ -138,12 +139,12 @@ const SongPage = () => {
                               </section>
                     </ModalCommon>
                     {/* Background Image */}
-                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/3ff7f86580_6224df2a18d239ed5cd776b9dc30798b.jpg')] bg-top `}></div>
+                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/3aeb646985_a58d2e5aefb405ad7fddbabfa647d844.jpg')] bg-top `}></div>
                     
                     {/* Content */}
                     <section className="z-10 relative">
                          <div className="w-full flex flex-col items-center md:items-end md:flex-row gap-x-6">
-                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/3ff7f86580_6224df2a18d239ed5cd776b9dc30798b.jpg"/>
+                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/3aeb646985_a58d2e5aefb405ad7fddbabfa647d844.jpg"/>
                               <div className="w-full flex flex-col justify-end">
                                    <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Injaneb</h1>
                                    {/* Artist */}
@@ -219,7 +220,7 @@ const SongPage = () => {
                          </div>
                          {/* Details */}
                          <div className="w-full">
-                              <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-4'>Details</h3>
+                              <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-4'>Details.</h3>
                               <Swiper 
                                    className={" w-full mt-4 overflow-hidden"} 
                                    freeMode={false} 
@@ -250,31 +251,44 @@ const SongPage = () => {
                                    ))}
                               </Swiper>
                          </div>
+                         
+                         {/* All Tracks In Albume */}
+                         <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>All Tracks In Albume.</h3>
+                         <section className="w-full mt-4 h-auto flex flex-col gap-y-4 gap-4">
+                         {[   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                              "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"]
+                              .map((imgSrc,index) => (
+                                   <SongItemCommon img={imgSrc} key={index} playlist="Shakhe Ghermez" time="04:42" title={`Injaneb - ${index +1}`}/>
+                              ))
+                         }
+                         </section>
+
                          {/* New Release */}
                          <FreeSlider type={ETypes.SONG} sliders={data} title={"Top Related."}/>
 
                          {/* More Related tracks */}
-                         <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>More Related Tracks</h3>
+                         <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>More Related Tracks.</h3>
 
                          <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
-                         {[   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"]
-                              .map((imgSrc,index) => (
-                                   <MiniSongItem imgSrc={imgSrc} singer={"Reza Pishro"} key={index} title={"Qabil"}/>)
-                              )
-                         }
-                    </section>
+                              {[   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
+                                   "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"]
+                                   .map((imgSrc,index) => (
+                                        <MiniSongItem imgSrc={imgSrc} singer={"Reza Pishro"} key={index} title={"Qabil"}/>)
+                                   )
+                              }
+                         </section>
                     </section>
                </>
           </Layout>
