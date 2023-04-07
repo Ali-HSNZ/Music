@@ -1,4 +1,4 @@
-import { TMiniSongItemProps } from "@type/public.types";
+import { TMiniSongItemProps } from "@type/song.types";
 import Link from "next/link";
 
 
