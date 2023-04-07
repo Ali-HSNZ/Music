@@ -32,7 +32,7 @@ const SingerPage = () => {
                               <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/artists/63ee0761e2be4.jpg"/>
                               <div className="w-full flex flex-col justify-end">
                                    {/* Artist */}
-                                   <h1 className="text-3xl mt-6 md:mt-0 font-quicksand-bold text-yellow">Shayea</h1>
+                                   <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Shayea</h1>
 
                                    {/* Song Count Detials*/}
                                    <div className="rounded-md gap-4 flex flex-wrap w-full mt-4 ">
@@ -92,44 +92,44 @@ const SingerPage = () => {
                          {/* Recently Tracks */}
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>Recently Tracks</h3>
                          <section className="w-full mt-4 h-auto flex flex-col gap-y-4 gap-4">
-                         {data.slice(0,3).map((item,index) => (
-                                   <article key={index} className="w-full select-none flex justify-between bg-secondBg bg-opacity-25 border border-secondBg  rounded-md  p-2">
-                                        <div className="w-full flex  justify-between">
-                                             <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md my-auto" src={item.img}/>                                                  
-                                             <div className="w-full grid grid-cols-1 sm:grid-cols-2 pl-4">
-                                                  <Link href="/song" className="text-second  my-auto font-quicksand-medium sm:w-fit pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
-                                                  <span className={`text-second  ${index < 1 && "underline cursor-pointer" } sm:w-fit pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : index < 2 ? 'solo Tracks' : "Tracks"}</span>
+                              {data.slice(0,3).map((item,index) => (
+                                        <article key={index} className="w-full select-none flex justify-between bg-secondBg bg-opacity-25 border border-secondBg  rounded-md  p-2">
+                                             <div className="w-full flex  justify-between">
+                                                  <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md my-auto" src={item.img}/>                                                  
+                                                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 pl-4">
+                                                       <Link href="/song" className="text-second  my-auto font-quicksand-medium sm:w-fit pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
+                                                       <span className={`text-second  ${index < 1 && "underline cursor-pointer" } sm:w-fit pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : "Solo"}</span>
+                                                  </div>
+                                                  <span className="text-second  font-quicksand-medium flex items-center mr-4 text-left">04:12</span>
                                              </div>
-                                             <span className="text-second  font-quicksand-medium flex items-center mr-4 text-left">04:12</span>
-                                        </div>
 
-                                        <button className="p-1 group hover:border-second border border-secondBg rounded-md py-1.5 h-fit my-auto px-4">
-                                             <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                             </svg>
-                                        </button>
+                                             <button className="p-1 group hover:border-second border border-secondBg rounded-md py-2 h-fit my-auto px-4">
+                                                  <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                                                  </svg>
+                                             </button>
 
-                                   </article>
-                              ))
-                         }
+                                        </article>
+                                   ))
+                              }
                          </section>
                          
                          {/* All Playlists */}
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>All Playlists</h3>
                          <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
-                         {data.slice(0,4).map((item,index) => (
-                              <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
+                              {data.slice(0,4).map((item,index) => (
+                                   <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
 
-                         ))}
+                              ))}
                          </section>
                          
                          {/* All Songs */}
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>All Songs</h3>
                          <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
-                         {data.map((item,index) => (
-                              <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
+                              {data.map((item,index) => (
+                                   <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
 
-                         ))}
+                              ))}
                          </section>
 
 
