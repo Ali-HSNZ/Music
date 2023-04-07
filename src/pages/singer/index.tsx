@@ -2,7 +2,7 @@ import Layout from "@layout/Layout";
 import { TSlider } from "@type/public.types";
 import MiniSongItem from "@common/MiniSongItem";
 import {BsFillShareFill} from 'react-icons/bs'
-import Link from "next/link";
+import SongItemCommon from "@common/SongItem";
 
 
 
@@ -24,12 +24,13 @@ const SingerPage = () => {
           <Layout>
                <>
                     {/* Background Image */}
-                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/artists/63ee0761e2be4.jpg')] bg-top `}></div>
+                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://i.scdn.co/image/ab6761610000e5eba1a3d8d83a7ae46cff3520e8')] bg-top `}></div>
+                    
                     
                     {/* Content */}
                     <section className="z-10 relative">
                          <div className="w-full flex flex-col items-center md:items-end md:flex-row gap-x-6">
-                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/artists/63ee0761e2be4.jpg"/>
+                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://i.scdn.co/image/ab6761610000e5eba1a3d8d83a7ae46cff3520e8"/>
                               <div className="w-full flex flex-col justify-end">
                                    {/* Artist */}
                                    <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Shayea</h1>
@@ -72,20 +73,21 @@ const SingerPage = () => {
                                    </div>
                               </div>
                          </div>
+
                          {/* Biography */}
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>Biography</h3>
                          <section className="flex flex-col gap-y-2 mt-2">
                               <p className="text-second font-quicksand-regular">
-                                   <strong>Born:</strong> August 8, 1988 (age 34 years), Tehran
+                                  Born: August 8, 1988 (age 34 years), Tehran
                               </p>
                               <p className="text-second font-quicksand-regular">
-                                   <strong>Height:</strong> 1.74 m
+                                  Height: 1.74 m
                               </p>
                               <p className="text-second font-quicksand-regular">
-                                   <strong>Genre:</strong> Indian Film Pop, Hip-Hop/Rap, Korean Hip-Hop/Rap
+                                  Genre: Indian Film Pop, Hip-Hop/Rap, Korean Hip-Hop/Rap
                               </p>
                               <p className="text-second font-quicksand-regular">
-                                   <strong>Record labels:</strong> C2ink, RADIO JAVAN
+                                  Record labels: C2ink, RADIO JAVAN
                               </p>
                          </section>
                          
@@ -93,23 +95,7 @@ const SingerPage = () => {
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>Recently Tracks</h3>
                          <section className="w-full mt-4 h-auto flex flex-col gap-y-4 gap-4">
                               {data.slice(0,3).map((item,index) => (
-                                        <article key={index} className="w-full select-none flex justify-between bg-secondBg bg-opacity-25 border border-secondBg  rounded-md  p-2">
-                                             <div className="w-full flex  justify-between">
-                                                  <img className="w-[50px] cursor-pointer object-cover h-[50px] rounded-md my-auto" src={item.img}/>                                                  
-                                                  <div className="w-full grid grid-cols-1 sm:grid-cols-2 pl-4">
-                                                       <Link href="/song" className="text-second  my-auto font-quicksand-medium sm:w-fit pr-4 cursor-pointer text-left underline truncate">Injaneb</Link>
-                                                       <span className={`text-second  ${index < 1 && "underline cursor-pointer" } sm:w-fit pr-4 my-auto truncate font-quicksand-medium   `}>{index < 1 ? "Shakhe ghermez" : "Solo"}</span>
-                                                  </div>
-                                                  <span className="text-second  font-quicksand-medium flex items-center mr-4 text-left">04:12</span>
-                                             </div>
-
-                                             <button className="p-1 group hover:border-second border border-secondBg rounded-md py-2 h-fit my-auto px-4">
-                                                  <svg className="w-6 h-6 text-second group-hover:text-main " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                                                       <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-                                                  </svg>
-                                             </button>
-
-                                        </article>
+                                        <SongItemCommon img={item.img}  key={index} playlist="Shakhe Ghermez" time="04:42" title={`Injaneb - ${index +1}`}/>
                                    ))
                               }
                          </section>
@@ -119,7 +105,6 @@ const SingerPage = () => {
                          <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
                               {data.slice(0,4).map((item,index) => (
                                    <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
-
                               ))}
                          </section>
                          
@@ -128,7 +113,6 @@ const SingerPage = () => {
                          <section className="w-full mt-6 h-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-4">
                               {data.map((item,index) => (
                                    <MiniSongItem imgSrc={item.img} singer={"Reza Pishro"} key={index} title={"Qabil"}/>
-
                               ))}
                          </section>
 
