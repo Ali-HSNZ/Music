@@ -139,12 +139,12 @@ const SongPage = () => {
                               </section>
                     </ModalCommon>
                     {/* Background Image */}
-                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://cdnmrtehran.ir/media/mp3s/01/3aeb646985_a58d2e5aefb405ad7fddbabfa647d844.jpg')] bg-top `}></div>
+                    <div className={`w-full h-full hidden md:block absolute top-0 left-0 right-0 bg-no-repeat bg-cover brightness-50 contrast-150 saturate-50 bg-[linear-gradient(to_bottom,transparent,#7D7C7C),url('https://up.faz2music.ir/view/3150683/%D8%B4%D8%A7%DB%8C%D8%B9-%D9%87%DB%8C%D8%AF%D9%86-%D9%85%D8%B5%D8%B1.jpg')] bg-top `}></div>
                     
                     {/* Content */}
                     <section className="z-10 relative">
                          <div className="w-full flex flex-col items-center md:items-end md:flex-row gap-x-6">
-                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://cdnmrtehran.ir/media/mp3s/01/3aeb646985_a58d2e5aefb405ad7fddbabfa647d844.jpg"/>
+                              <img className="w-full sm:w-1/2 md:w-[270px] h-auto md:max-h-[270px]  object-cover rounded-lg" src="https://up.faz2music.ir/view/3150683/%D8%B4%D8%A7%DB%8C%D8%B9-%D9%87%DB%8C%D8%AF%D9%86-%D9%85%D8%B5%D8%B1.jpg"/>
                               <div className="w-full flex flex-col justify-end">
                                    <h1 className="text-3xl mt-4 md:mt-0 font-quicksand-bold text-yellow">Injaneb</h1>
                                    {/* Artist */}
