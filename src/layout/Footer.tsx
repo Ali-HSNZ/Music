@@ -11,8 +11,7 @@ const Footer = () => {
                               <div className="ml-8">
                                    <p className="font-quicksand-medium text-second">Technologies</p>
                                    <ul className="ml-12 flex flex-col gap-y-1">
-                                        <li className="list-disc font-quicksand-light text-second mt-1">Javascript</li>
-                                        <li className="list-disc font-quicksand-light text-second">NextJs</li>
+                                        <li className="list-disc font-quicksand-light text-second mt-1">NextJs</li>
                                         <li className="list-disc font-quicksand-light text-second">Typescript</li>
                                         <li className="list-disc font-quicksand-light text-second">Tailwind</li>
                                    </ul>
@@ -37,6 +36,8 @@ const Footer = () => {
                               </div>
                          </div>
                     </div>
+
+
                     {/* Back-End */}
                     <div className="flex flex-col border-secondBg">
                          <p className="font-quicksand-bold text-yellow">Back-End :</p>
