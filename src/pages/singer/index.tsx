@@ -78,16 +78,7 @@ const SingerPage = () => {
                          <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>Biography</h3>
                          <section className="flex flex-col gap-y-2 mt-2">
                               <p className="text-second font-quicksand-regular">
-                                  Born: August 8, 1988 (age 34 years), Tehran
-                              </p>
-                              <p className="text-second font-quicksand-regular">
-                                  Height: 1.74 m
-                              </p>
-                              <p className="text-second font-quicksand-regular">
-                                  Genre: Indian Film Pop, Hip-Hop/Rap, Korean Hip-Hop/Rap
-                              </p>
-                              <p className="text-second font-quicksand-regular">
-                                  Record labels: C2ink, RADIO JAVAN
+                                   Shayea is an Iranian rapper and singer. He is known for his contributions to Persian rap music and has gained popularity for his socially conscious lyrics and unique style. He has released several successful albums and collaborated with various other artists in the Iranian music industry.
                               </p>
                          </section>
                          
