@@ -80,7 +80,7 @@ const Footer = () => {
                <hr className="w-full max-w-[1600px] mt-4 border-secondBg"/>
                <div className="w-full mt-4  max-w-[1600px]">
                     <p className="font-quicksand-bold text-yellow">Musica</p>
-                    <p className="font-quicksand-light text-second ml-8 mt-2">
+                    <p className="font-quicksand-regular text-main ml-8 mt-2">
                          You can use all the services of the site, such as listening to music and podcasts, as well as creating your favorite music playlist for free.
                          Also, downloading music and podcasts and liking and bookmarking them are among the features of this site.
                     </p>
