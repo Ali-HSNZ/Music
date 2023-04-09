@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
      return (  
           <footer className="bg-secondBlackBg w-full flex items-center flex-col p-4 text-second mt-6 ">
@@ -21,7 +23,9 @@ const Footer = () => {
                                    <p className="font-quicksand-regular text-main">Github</p>
                                    <ul className="ml-12">
                                         <li className=" list-disc mt-1 w-fit cursor-pointer hover:no-underline font-quicksand-light text-second underline underline-offset-2">
-                                             https://github.com/Ali-HSNZ/Music
+                                             <Link href={'https://github.com/Ali-HSNZ/Music'}>
+                                                  https://github.com/Ali-HSNZ/Music
+                                             </Link>
                                         </li>
                                    </ul>
                               </div>
