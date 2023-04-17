@@ -35,11 +35,11 @@ export default function Home() {
           {/* New Album */}
           <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"New Albums."}/>
           {/* popular Podcasts */}
-          <FreeSlider type={ETypes.PLAYLIST} sliders={data} title={"popular Podcasts."}/>
+          <FreeSlider type={ETypes.POTCAST} sliders={data} title={"popular Podcasts."}/>
           {/* Top Tracks In Month */}
           <TopTracksInMonth/>
           {/* Recently Added */}
-          <FreeSlider type={ETypes.POTCAST} sliders={data} title={"Recently Added."}/>
+          <FreeSlider type={ETypes.SONG} sliders={data} title={"Recently Added."}/>
           {/* New Podcasts */}
           <FreeSlider type={ETypes.POTCAST} sliders={data} title={"New Podcasts."}/>
           {/* Top Podcasts */}
