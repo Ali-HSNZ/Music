@@ -252,17 +252,6 @@ const SongPage = () => {
                               </Swiper>
                          </div>
                          
-                         {/* All Tracks In Albume */}
-                         <h3 className='text-mainColor text-2xl font-quicksand-bold text-main mt-6'>All Tracks In Albume.</h3>
-                         <section className="w-full mt-4 h-auto flex flex-col gap-y-4 gap-4">
-                         {[   "https://cdnmrtehran.ir/media/imgtmp/640f2b0486667.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/6416fdfb59d02.jpg",
-                              "https://cdnmrtehran.ir/media/imgtmp/641db0fadd11c.jpg"]
-                              .map((imgSrc,index) => (
-                                   <SongItemCommon img={imgSrc} key={index} playlist="Shakhe Ghermez" time="04:42" title={`Injaneb - ${index +1}`}/>
-                              ))
-                         }
-                         </section>
 
                          {/* New Release */}
                          <FreeSlider type={ETypes.SONG} sliders={data} title={"Top Related."}/>
