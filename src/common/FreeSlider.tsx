@@ -9,6 +9,7 @@ import "swiper/css/free-mode";
 import Link from 'next/link';
 import { ETypes, ISliderProps } from "@type/public.types";
 import {BsCollectionPlay} from 'react-icons/bs'
+import {BiPodcast} from 'react-icons/bi'
 
 const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title , type}) => {
      return (
@@ -40,14 +41,16 @@ const FreeSlider : React.FunctionComponent<ISliderProps> = ({sliders , title , t
                          </Link>
 
                          {type !== ETypes.SINGER  && (
-                              <Link href={'/song'} className='bg-secondBg bg-opacity-25 mt-2 p-2 relative pl-9 flex items-center justify-start border group border-secondBg duration-150 hover:border-second h-auto rounded-md border-secondColor'>
-                                   {type === ETypes.SONG || type === ETypes.POTCAST ? (
+                              <Link href={type === ETypes.PLAYLIST ? "/playlist" : type === ETypes.SONG ? '/song' : "/podcast"} className='bg-secondBg bg-opacity-25 mt-2 p-2 relative pl-9 flex items-center justify-start border group border-secondBg duration-150 hover:border-second h-auto rounded-md border-secondColor'>
+                                   {type === ETypes.SONG ? (
                                         <svg className="absolute text-second left-3 w-6 h-6 "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
                                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
                                         </svg>
                                    ) : type === ETypes.PLAYLIST ? (
                                         <BsCollectionPlay className="absolute text-second left-3 w-6 h-6 "/>
-                                        ) : <></>}
+                                   ) : (
+                                        <BiPodcast className="absolute text-second left-3 w-6 h-6 "/>
+                                   )}
                                    <p className='w-[148px] text-main truncate ml-2 text-secondColor text-left font-quicksand-medium'>Injaneb</p>
                               </Link>
                          )}
